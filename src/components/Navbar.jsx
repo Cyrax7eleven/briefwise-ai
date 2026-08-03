@@ -5,11 +5,11 @@ import { useAuth } from '../lib/AuthContext'
 
 export default function Navbar() {
   const { user, logout } = useAuth()
-  const [theme, setTheme] = useState('dark')
+  const [theme, setTheme] = useState('light')
 
   useEffect(() => {
     const storedTheme = window.localStorage.getItem('briefwise-theme')
-    const defaultTheme = storedTheme || 'dark'
+    const defaultTheme = storedTheme || 'light'
     setTheme(defaultTheme)
     document.documentElement.classList.toggle('dark', defaultTheme === 'dark')
   }, [])
